@@ -7,12 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [],
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule],
   exports: [
-    MatFormFieldModule,
     MatToolbarModule,
-    MatIconModule,
     MatButtonModule,
+    MatFormFieldModule,
     MatInputModule,
     MatIconModule,
   ],

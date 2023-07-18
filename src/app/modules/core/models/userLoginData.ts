@@ -1,9 +1,9 @@
-export interface UserModel {
+export interface UserLoginData {
   username: string;
   password: string;
 }
 
-export interface GetUserResponse {
+export interface GetUsersResponse {
   id: number;
   email: string;
   password: string;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserModel } from '../../../core/models/user.model';
+import { UserLoginData } from '../../../core/models/userLoginData';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -9,18 +9,23 @@ import { AuthService } from '../../../core/services/auth.service';
 })
 export class LoginComponent {
   hide = true;
-  userData: UserModel = {
+  userData: UserLoginData = {
     username: '',
     password: '',
   };
+  errorMessage = '';
 
   constructor(private authService: AuthService) {}
 
   onLogin() {
-    console.log(this.userData);
     this.authService.login(this.userData).subscribe({
       next: (value) => {
-        console.log(value);
+        if (value.length === 0) {
+          this.errorMessage = 'Podano nieprawidlowe dane do logowania.';
+        }
+      },
+      error: (err) => {
+        this.errorMessage = 'Wystąpił błąd.';
       },
     });
   }
