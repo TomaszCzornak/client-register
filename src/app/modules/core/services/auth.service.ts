@@ -2,7 +2,13 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
-import { GetUsersResponse, User, UserLoginData } from '../models/userLoginData';
+import {
+  GetUsersResponse,
+  PostUser,
+  PostUserResponse,
+  User,
+  UserLoginData,
+} from '../models/userLoginData';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -48,6 +54,10 @@ export class AuthService {
 
     const user = new User(userData.email, userData.username);
     this.user.next(user);
+  }
+
+  register(userData: PostUser): Observable<PostUserResponse> {
+    return this.http.post<PostUserResponse>(`${this.apiUrl}/users`, userData);
   }
 
   private handleAuthentication(userArr: User[]) {

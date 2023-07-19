@@ -13,3 +13,7 @@ export interface GetUsersResponse {
 export class User {
   constructor(public email: string, public username: string) {}
 }
+
+export type PostUser = Omit<GetUsersResponse, 'id'>;
+
+export type PostUserResponse = GetUsersResponse;

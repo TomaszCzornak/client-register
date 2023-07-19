@@ -1,13 +1,36 @@
 {
   "users": [
-    { "id": 1, "email": "json-server", "password": "typicode","username": "test123" }
+    {
+      "id": 1,
+      "email": "json-server",
+      "password": "typicode",
+      "username": "test123"
+    },
+    {
+      "email": "tomek@gmail.com",
+      "username": "Tomasz",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "email": "Johny@walker.com",
+      "username": "Johnny",
+      "password": "123",
+      "id": 3
+    }
   ],
   "clients": [
-    { "id": 1, "firstname": "Test", "surname": "Testowy", "email": "test@gmail.com",
-    "phone": "123456789",
+    {
+      "id": 1,
+      "firstname": "Test",
+      "surname": "Testowy",
+      "email": "test@gmail.com",
+      "phone": "123456789",
       "addres": "miasto ul. Testowa 12",
       "postcode": "21-200"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }
